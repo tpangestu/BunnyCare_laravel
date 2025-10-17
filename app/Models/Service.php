@@ -20,4 +20,14 @@ class Service extends Model
     protected $casts = [
         'photo' => 'array'
     ];
+
+    public function getPhotoUrlAttribute()
+    {
+        if (!$this->photo) {
+            return null;
+        }
+
+        $disk = config('filesystems.default');
+        return url(Storage::disk($disk)->url($this->photo[0] ?? ''));
+    }
 }

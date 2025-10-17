@@ -6,29 +6,9 @@
         "api/index.php": { "runtime": "vercel-php@0.7.1" }
     },
     "routes": [
-        {
-            "src": "/build/(.*)",
-            "headers": { "Cache-Control": "public, max-age=31556952, immutable" },
-            "dest": "/public/build/$1"
-        },
-        {
-            "src": "/assets/(.*)",
-            "headers": { "Cache-Control": "public, max-age=31556952, immutable" },
-            "dest": "/public/assets/$1"
-        },
-        {
-            "src": "/images/(.*)",
-            "headers": { "Cache-Control": "public, max-age=31556952, immutable" },
-            "dest": "/public/images/$1"
-        },
-        {
-            "src": "/(favicon\\.ico|robots\\.txt|manifest\\.webmanifest)",
-            "dest": "/public/$1"
-        },
-        {
-            "src": "/(css|js|build)/(.*)",
-            "dest": "/public/$1/$2"
-        },
+        { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
+        { "src": "/(css|js|build)/(.*)", "dest": "/public/$1/$2" },
+        { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
@@ -65,11 +45,10 @@
         "FILESYSTEM_DISK": "public",
         "FILESYSTEM_DRIVER": "public",
         "APP_STORAGE": "/tmp",
-        "STORAGE_PATH": "/tmp",
+        "STORAGE_PATH": "/tmp/storage/app",
+        "PUBLIC_STORAGE_PATH": "/tmp/storage/app/public",
         "VIEW_COMPILED_PATH": "/tmp/views",
-        "CACHE_PATH": "/tmp/cache",
-        "ASSET_URL": "https://${VERCEL_URL}",
-        "VITE_APP_URL": "https://${VERCEL_URL}",
-        "VITE_USER_NODE_ENV": "production"
+        "SSR_TEMP_PATH": "/tmp/ssr",
+        "CACHE_PATH": "/tmp/cache"
     }
 }

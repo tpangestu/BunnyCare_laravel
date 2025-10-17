@@ -11,6 +11,18 @@ class Gallery extends Model
 
     protected $fillable = [
         'photo',
+        'photo_path',
         'caption',
     ];
+
+    /**
+     * Get the URL of the gallery photo
+     */
+    public function getPhotoUrlAttribute()
+    {
+        if (!$this->photo) {
+            return null;
+        }
+        return asset($this->photo);
+    }
 }

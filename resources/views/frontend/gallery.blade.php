@@ -10,7 +10,7 @@
             @foreach($galleryPhotos as $photo)
             <div class="col">
                 <div class="card h-100 shadow-sm">
-                    <img src="{{ asset('storage/' . $photo->photo) }}" class="card-img-top" alt="{{ $photo->caption ?? 'Gallery Photo' }}" style="height: 250px; object-fit: cover;">
+                    <img src="{{ $photo->photo_url }}" class="card-img-top" alt="{{ $photo->caption ?? 'Gallery Photo' }}" style="height: 250px; object-fit: cover;">
                     @if($photo->caption)
                     <div class="card-body">
                         <p class="card-text text-center">{{ $photo->caption }}</p>

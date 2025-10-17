@@ -28,8 +28,9 @@ class GalleryResource extends Resource
                     ->image()
                     ->required()
                     ->disk('public')
-                    ->directory('gallery-photos') // Simpan di storage/app/public/gallery-photos
-                    ->visibility('public'),
+                    ->directory('assets/gallery-photos') // Update path ke public/assets/gallery-photos
+                    ->visibility('public')
+                    ->storeFileNamesIn('photo_path'),
                 Forms\Components\TextInput::make('caption')
                     ->nullable()
                     ->maxLength(255),

@@ -21,7 +21,7 @@ class BookingController extends Controller
 
         $proofOfPaymentPath = null;
         if ($request->hasFile('proof_of_payment')) {
-            $proofOfPaymentPath = $request->file('proof_of_payment')->store('proofs', 'public');
+            $proofOfPaymentPath = $request->file('proof_of_payment')->store('assets/proofs', 'public');
         }
 
         $booking = GroomingBooking::create([
@@ -46,7 +46,7 @@ class BookingController extends Controller
 
         $proofOfPaymentPath = null;
         if ($request->hasFile('proof_of_payment')) {
-            $proofOfPaymentPath = $request->file('proof_of_payment')->store('proofs', 'public');
+            $proofOfPaymentPath = $request->file('proof_of_payment')->store('assets/proofs', 'public');
         }
 
         $booking = ClinicBooking::create([
@@ -83,7 +83,7 @@ class BookingController extends Controller
 
         $proofOfPaymentPath = null;
         if ($request->hasFile('proof_of_payment')) {
-            $proofOfPaymentPath = $request->file('proof_of_payment')->store('proofs', 'public');
+            $proofOfPaymentPath = $request->file('proof_of_payment')->store('assets/proofs', 'public');
         }
 
         $booking = HotelBooking::create([

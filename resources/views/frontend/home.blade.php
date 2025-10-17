@@ -23,7 +23,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm">
                 @if($groomingServices->first())
-                <img src="{{ asset('storage/' . $groomingServices->first()->photo) }}" class="card-img-top" alt="Grooming" style="height: 200px; object-fit: cover;">
+                <img src="{{ asset($groomingServices->first()->photo) }}" class="card-img-top" alt="Grooming" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">{{ $groomingServices->first()->name }}</h5>
                     <p class="card-text text-muted">Harga: Rp{{ number_format($groomingServices->first()->price, 0, ',', '.') }}</p>
@@ -43,7 +43,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm">
                 @if($clinicServices->first())
-                <img src="{{ asset('storage/' . $clinicServices->first()->photo) }}" class="card-img-top" alt="Bunny Clinic" style="height: 200px; object-fit: cover;">
+                <img src="{{ asset($clinicServices->first()->photo) }}" class="card-img-top" alt="Bunny Clinic" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">{{ $clinicServices->first()->name }}</h5>
                     <p class="card-text text-muted">Harga: Rp{{ number_format($clinicServices->first()->price, 0, ',', '.') }}</p>
@@ -63,7 +63,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm">
                 @if($hotelServices->first())
-                <img src="{{ asset('storage/' . $hotelServices->first()->photo) }}" class="card-img-top" alt="Bunny Hotel" style="height: 200px; object-fit: cover;">
+                <img src="{{ asset($hotelServices->first()->photo) }}" class="card-img-top" alt="Bunny Hotel" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
                     <h5 class="card-title">{{ $hotelServices->first()->name }}</h5>
                     <p class="card-text text-muted">Harga per hari: Rp{{ number_format(optional($hotelServices->first())->price ?? 0, 0, ',', '.') }}</p>

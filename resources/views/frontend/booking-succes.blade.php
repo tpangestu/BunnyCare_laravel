@@ -79,7 +79,7 @@
                 </div>
                 <div class="col-md-6">
                     @if($booking->proof_of_payment)
-                        <img src="{{ asset('storage/' . $booking->proof_of_payment) }}" alt="Bukti Pembayaran" class="img-fluid rounded" style="max-height: 150px;">
+                        <img src="{{ asset($booking->proof_of_payment) }}" alt="Bukti Pembayaran" class="img-fluid rounded" style="max-height: 150px;">
                     @else
                         Tidak ada bukti pembayaran.
                     @endif

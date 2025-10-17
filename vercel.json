@@ -1,21 +1,21 @@
 {
     "version": 2,
     "framework": null,
-    "buildCommand": "npm install && npm run build",
+    "buildCommand": "npm install && npm run build && php artisan storage:link",
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.7.1" }
     },
     "routes": [
-    { "src": "/(css|js|build|storage)/(.*)", "dest": "/public/$1/$2" },
-    { "src": "/(.*)", "dest": "/api/index.php" }
-],
+        { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
+        { "src": "/(css|js|build)/(.*)", "dest": "/public/$1/$2" },
+        { "src": "/(.*)", "dest": "/api/index.php" }
+    ],
     "public": true,
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "https://bunny-care-3slnp0ihz-pangestus-projects-9a472a10.vercel.app",
-        "ASSET_URL": "https://bunny-care-3slnp0ihz-pangestus-projects-9a472a10.vercel.app",
+        "APP_URL": "${VERCEL_URL}",
         "APP_KEY": "base64:VKyRxogL3l7fY0QWmt+RTa0odySXAMYNMzw9UnRS+kU=",
         "DB_CONNECTION": "mysql",
         "DB_HOST": "26p77z.h.filess.io",

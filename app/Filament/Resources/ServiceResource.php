@@ -36,12 +36,15 @@ class ServiceResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('photo') // Untuk upload foto
-                    ->image() // Hanya izinkan gambar
-                    ->directory('assets/services-photos') // Simpan di public/assets/services-photos
-                    ->visibility('public')
+                Forms\Components\FileUpload::make('photo')
+                    ->image()
+                    ->directory('services-photos')
                     ->disk('public')
-                    ->storeFileNamesIn('photo_path') // Menyimpan path file
+                    ->maxSize(2048)
+                    ->imageResizeMode('contain')
+                    ->imageCropAspectRatio('16:9')
+                    ->imageResizeTargetWidth('1920')
+                    ->imageResizeTargetHeight('1080')
                     ->nullable(),
                 Forms\Components\TextInput::make('price')
                     ->numeric()

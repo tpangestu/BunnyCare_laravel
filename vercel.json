@@ -40,7 +40,7 @@
         "TRUST_PROXIES": "*",
         "SESSION_SAME_SITE": "lax",
         "SANCTUM_STATEFUL_DOMAINS": "${VERCEL_URL}",
-        "SESSION_DOMAIN": null,
+        "SESSION_DOMAIN": "",
         "FILESYSTEM_DISK": "public",
         "FILESYSTEM_DRIVER": "public",
         "APP_STORAGE": "/tmp/app",

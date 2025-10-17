@@ -1,10 +1,9 @@
 {
     "version": 2,
     "framework": null,
-    "builds": [
-        { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "public" } },
-        { "src": "api/index.php", "use": "@vercel/php", "config": { "runtime": "vercel-php@0.7.1" } }
-    ],
+    "functions": {
+        "api/index.php": { "runtime": "vercel-php@0.7.1" }
+    },
     "routes": [
         { "src": "^/(favicon.ico|robots.txt)$", "dest": "/public/$1" },
         { "src": "^/css/(.*)", "dest": "/public/css/$1" },
@@ -18,7 +17,7 @@
     ],
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "APP_URL": "",
         "APP_KEY": "base64:VKyRxogL3l7fY0QWmt+RTa0odySXAMYNMzw9UnRS+kU=",
         "DB_CONNECTION": "mysql",

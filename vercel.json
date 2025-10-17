@@ -2,9 +2,17 @@
     "version": 2,
     "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.6.0" }
+        "api/index.php": { "runtime": "vercel-php@0.7.1" }
     },
     "routes": [
+        { "src": "^/(favicon.ico|robots.txt)$", "dest": "/public/$1" },
+        { "src": "^/css/(.*)", "dest": "/public/css/$1" },
+        { "src": "^/js/(.*)", "dest": "/public/js/$1" },
+        { "src": "^/build/(.*)", "dest": "/public/build/$1" },
+        { "src": "^/images/(.*)", "dest": "/public/images/$1" },
+        { "src": "^/assets/(.*)", "dest": "/public/assets/$1" },
+        { "src": "^/dist/(.*)", "dest": "/public/dist/$1" },
+        { "src": "^/storage/(.*)", "dest": "/public/storage/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "env": {
@@ -15,10 +23,9 @@
         "DB_CONNECTION": "mysql",
         "DB_HOST": "26p77z.h.filess.io",
         "DB_PORT": "3307",
-        "DB_DATABASE": "bBunny_clothingdo",
-        "DB_USERNAME": "bBunny_clothingdo",
+        "DB_DATABASE": "dbBunny_clothingdo",
+        "DB_USERNAME": "dbBunny_clothingdo",
         "DB_PASSWORD": "d9ea8dbf7c743b6a74fa8d769faba65c8a329f20",
-
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_EVENTS_CACHE": "/tmp/events.php",

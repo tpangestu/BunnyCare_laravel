@@ -6,14 +6,16 @@
         "api/index.php": { "runtime": "vercel-php@0.7.1" }
     },
     "routes": [
-        { "src": "/(.*)", "dest": "/api/index.php" }
-    ],
+    { "src": "/(css|js|build|storage)/(.*)", "dest": "/public/$1/$2" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+],
     "public": true,
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
-        "APP_URL": "",
+        "APP_URL": "https://bunny-care-3slnp0ihz-pangestus-projects-9a472a10.vercel.app",
+        "ASSET_URL": "https://bunny-care-3slnp0ihz-pangestus-projects-9a472a10.vercel.app",
         "APP_KEY": "base64:VKyRxogL3l7fY0QWmt+RTa0odySXAMYNMzw9UnRS+kU=",
         "DB_CONNECTION": "mysql",
         "DB_HOST": "26p77z.h.filess.io",

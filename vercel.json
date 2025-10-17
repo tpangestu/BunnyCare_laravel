@@ -14,7 +14,7 @@
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "APP_URL": "${VERCEL_URL}",
         "APP_KEY": "base64:VKyRxogL3l7fY0QWmt+RTa0odySXAMYNMzw9UnRS+kU=",
         "DB_CONNECTION": "mysql",
@@ -30,13 +30,12 @@
         "APP_ROUTES_CACHE": "/tmp/routes.php",
         "APP_SERVICES_CACHE": "/tmp/services.php",
         "VIEW_COMPILED_PATH": "/tmp",
-
         "CACHE_DRIVER": "array",
-        "SESSION_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "VIEW_CACHE": "false",
-
-        "FILESYSTEM_DISK": "public",
-        "FILESYSTEM_DRIVER": "public"
+        "SESSION_DRIVER": "cookie",
+        "SESSION_LIFETIME": "120",
+        "SANCTUM_STATEFUL_DOMAINS": "${VERCEL_URL}",
+        "SESSION_DOMAIN": "${VERCEL_URL}",
+        "FILESYSTEM_DISK": "public"
     }
 }

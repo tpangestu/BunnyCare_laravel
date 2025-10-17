@@ -39,7 +39,15 @@ return [
         'public' => [
             'driver' => 'local',
             'root' => public_path(),
-            'url' => env('APP_URL'),
+            'url' => env('APP_URL', 'http://localhost'),
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'assets' => [
+            'driver' => 'local',
+            'root' => public_path('assets'),
+            'url' => env('APP_URL', 'http://localhost').'/assets',
             'visibility' => 'public',
             'throw' => false,
         ],

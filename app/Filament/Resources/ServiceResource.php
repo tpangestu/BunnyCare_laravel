@@ -38,11 +38,12 @@ class ServiceResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('photo')
                     ->image()
-                    ->directory('uploads')
+                    ->directory('services')
                     ->preserveFilenames()
                     ->maxSize(1024)
                     ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])
-                    ->disk('public')
+                    ->disk('assets')
+                    ->visibility('public')
                     ->nullable(),
                 Forms\Components\TextInput::make('price')
                     ->numeric()

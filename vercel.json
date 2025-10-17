@@ -2,11 +2,9 @@
     "version": 2,
     "framework": null,
     "builds": [
-        { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "public" } }
+        { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "public" } },
+        { "src": "api/index.php", "use": "@vercel/php", "config": { "runtime": "vercel-php@0.7.1" } }
     ],
-    "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.7.1" }
-    },
     "routes": [
         { "src": "^/(favicon.ico|robots.txt)$", "dest": "/public/$1" },
         { "src": "^/css/(.*)", "dest": "/public/css/$1" },

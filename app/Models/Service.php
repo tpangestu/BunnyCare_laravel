@@ -25,6 +25,6 @@ class Service extends Model
         if (!$this->photo) {
             return null;
         }
-        return asset($this->photo);
+        return url($this->photo);
     }
 }

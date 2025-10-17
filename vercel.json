@@ -6,9 +6,9 @@
         "api/index.php": { "runtime": "vercel-php@0.7.1" }
     },
     "routes": [
-        { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
-        { "src": "/(css|js|build)/(.*)", "dest": "/public/$1/$2" },
         { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
+        { "src": "/(css|js|build)/(.*)", "dest": "/public/$1/$2" },
+        { "src": "/uploads/(.*)", "dest": "/public/uploads/$1" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
     "public": true,
@@ -45,8 +45,9 @@
         "FILESYSTEM_DISK": "public",
         "FILESYSTEM_DRIVER": "public",
         "APP_STORAGE": "/tmp",
-        "STORAGE_PATH": "/tmp/storage/app",
-        "PUBLIC_STORAGE_PATH": "/tmp/storage/app/public",
+        "STORAGE_PATH": "/tmp",
+        "UPLOAD_PATH": "/tmp/uploads",
+        "PUBLIC_PATH": "./public",
         "VIEW_COMPILED_PATH": "/tmp/views",
         "SSR_TEMP_PATH": "/tmp/ssr",
         "CACHE_PATH": "/tmp/cache"

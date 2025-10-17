@@ -1,12 +1,12 @@
 {
     "version": 2,
     "framework": null,
-    "buildCommand": "npm install && npm run build && php artisan storage:link",
+    "buildCommand": "npm install && npm run build",
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.7.1" }
     },
     "routes": [
-        { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
+        { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
         { "src": "/(css|js|build)/(.*)", "dest": "/public/$1/$2" },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],

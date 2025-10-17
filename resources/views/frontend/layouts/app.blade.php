@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
 <a class="navbar-brand" href="{{ url('/') }}">
-    <img src="{{ asset('storage/bg/logobunny.png') }}" alt="Logo Bunny Care" class="me-2">
+    <img src="{{ asset('assets/bg/logobunny.png') }}" alt="Logo Bunny Care" class="me-2">
     Bunny Care
 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

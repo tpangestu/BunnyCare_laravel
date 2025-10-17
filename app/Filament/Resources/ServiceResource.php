@@ -36,14 +36,12 @@ class ServiceResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('photo_path')
+                Forms\Components\FileUpload::make('photo')
                     ->image()
-                    ->imageEditor()
-                    ->directory('services-photos')
-                    ->visibility('public')
                     ->disk('public')
+                    ->directory('services-photos')
                     ->maxSize(2048)
-                    ->nullable(),
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('price')
                     ->numeric()
                     ->prefix('Rp')

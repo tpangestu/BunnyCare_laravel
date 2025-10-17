@@ -12,20 +12,12 @@ class Service extends Model
     protected $fillable = [
         'name',
         'photo',
-        'photo_path',
         'price',
         'description',
         'type',
     ];
 
-    /**
-     * Get the URL of the service photo
-     */
-    public function getPhotoUrlAttribute()
-    {
-        if (!$this->photo_path) {
-            return null;
-        }
-        return asset('storage/' . $this->photo_path);
-    }
+    protected $casts = [
+        'photo' => 'array'
+    ];
 }

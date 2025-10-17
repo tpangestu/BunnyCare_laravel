@@ -7,27 +7,27 @@
     },
     "routes": [
         {
-            "src": "/build/assets/.*",
-            "headers": {
-                "cache-control": "public, max-age=31536000, immutable"
-            },
-            "continue": true
+            "src": "/build/(.*)",
+            "headers": { "Cache-Control": "public, max-age=31556952, immutable" },
+            "dest": "/public/build/$1"
         },
         {
-            "src": "/build/.*",
-            "headers": {
-                "cache-control": "public, max-age=31536000, immutable"
-            },
-            "continue": true
+            "src": "/assets/(.*)",
+            "headers": { "Cache-Control": "public, max-age=31556952, immutable" },
+            "dest": "/public/assets/$1"
         },
-        { "src": "/build/(.*)", "dest": "/public/build/$1" },
-        { "src": "/(css|js)/(.*)", "dest": "/public/$1/$2" },
-        { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
-        { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
-        { "src": "/images/(.*)", "dest": "/public/images/$1" },
         {
-            "src": "/(favicon\\.ico|robots\\.txt|site\\.webmanifest)",
+            "src": "/images/(.*)",
+            "headers": { "Cache-Control": "public, max-age=31556952, immutable" },
+            "dest": "/public/images/$1"
+        },
+        {
+            "src": "/(favicon\\.ico|robots\\.txt|manifest\\.webmanifest)",
             "dest": "/public/$1"
+        },
+        {
+            "src": "/(css|js|build)/(.*)",
+            "dest": "/public/$1/$2"
         },
         { "src": "/(.*)", "dest": "/api/index.php" }
     ],
@@ -66,11 +66,10 @@
         "FILESYSTEM_DRIVER": "public",
         "APP_STORAGE": "/tmp",
         "STORAGE_PATH": "/tmp",
-        "PUBLIC_PATH": "/tmp/public",
+        "VIEW_COMPILED_PATH": "/tmp/views",
+        "CACHE_PATH": "/tmp/cache",
         "ASSET_URL": "https://${VERCEL_URL}",
         "VITE_APP_URL": "https://${VERCEL_URL}",
-        "VIEW_COMPILED_PATH": "/tmp/views",
-        "SSR_TEMP_PATH": "/tmp/ssr",
-        "CACHE_PATH": "/tmp/cache"
+        "VITE_USER_NODE_ENV": "production"
     }
 }

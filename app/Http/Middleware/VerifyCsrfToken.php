@@ -11,22 +11,18 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array<int, string>
      */
-    protected $except = [
-        '/admin/*'
-    ];
+    protected $except = [];
 
     /**
-     * Determine if the request has a URI that should pass through CSRF verification.
+     * The URIs that should be excluded from CSRF verification.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return bool
+     * @var array<int, string>
      */
-    protected function shouldPassThrough($request)
+    protected function tokensMatch($request)
     {
-        if ($request->is('admin/login')) {
-            return false;
+        if (!$request->session()->has('_token')) {
+            $request->session()->regenerateToken();
         }
-
-        return parent::shouldPassThrough($request);
+        return parent::tokensMatch($request);
     }
 }

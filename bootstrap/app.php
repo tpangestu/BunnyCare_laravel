@@ -7,24 +7,12 @@ $tmpDirs = [
     '/tmp/cache/data',
     '/tmp/views',
     '/tmp/sessions',
-    '/tmp/storage',
-    '/tmp/storage/framework',
-    '/tmp/storage/framework/cache',
-    '/tmp/storage/framework/cache/data',
-    '/tmp/storage/framework/sessions',
-    '/tmp/storage/framework/views',
 ];
 
 foreach ($tmpDirs as $dir) {
     if (!is_dir($dir)) {
         @mkdir($dir, 0755, true);
     }
-}
-
-// Set storage path ke /tmp untuk Vercel
-if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL'])) {
-    // Override storage_path helper
-    app()->useStoragePath('/tmp/storage');
 }
 
 $app = new Illuminate\Foundation\Application(

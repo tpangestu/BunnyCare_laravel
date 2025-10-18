@@ -5,8 +5,8 @@
     "functions": {
         "api/index.php": { 
             "runtime": "vercel-php@0.7.4",
-            "memory": 3008,
-            "maxDuration": 30
+            "memory": 1024,
+            "maxDuration": 10
         }
     },
     "routes": [
@@ -33,7 +33,7 @@
 
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "LOG_LEVEL": "debug",
+        "LOG_LEVEL": "error",
 
         "SESSION_DRIVER": "cookie",
         "SESSION_LIFETIME": "120",

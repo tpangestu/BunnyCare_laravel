@@ -40,14 +40,14 @@
         "SANCTUM_STATEFUL_DOMAINS": "${VERCEL_URL}",
         "SESSION_DOMAIN": "",
 
-        "FILESYSTEM_DISK": "local",
-        "FILESYSTEM_DRIVER": "local",
+        "FILESYSTEM_DISK": "public",
+        "FILESYSTEM_DRIVER": "public",
 
-        "APP_STORAGE": "/tmp/storage",
+        "APP_STORAGE": "/var/task/user/storage",
         "STORAGE_PATH": "/tmp/storage",
-        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
         "CACHE_PATH": "/tmp/storage/framework/cache",
-
+        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
+        
         "APP_SERVICES_CACHE": "/tmp/storage/framework/cache/services.php",
         "APP_PACKAGES_CACHE": "/tmp/storage/framework/cache/packages.php",
         "APP_CONFIG_CACHE": "/tmp/storage/framework/cache/config.php",

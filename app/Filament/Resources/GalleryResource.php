@@ -27,8 +27,8 @@ class GalleryResource extends Resource
                 Forms\Components\FileUpload::make('photo')
                     ->image()
                     ->required()
-                    ->disk('public')
-                    ->directory('assets/gallery-photos') // Update path ke public/assets/gallery-photos
+                    ->disk('s3')
+                    ->directory('gallery-photos') // Update path for S3
                     ->visibility('public')
                     ->storeFileNamesIn('photo_path'),
                 Forms\Components\TextInput::make('caption')
@@ -42,7 +42,7 @@ class GalleryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('photo')
-                    ->disk('public')
+                    ->disk('s3')
                     ->square()
                     ->height(80),
                 Tables\Columns\TextColumn::make('caption')

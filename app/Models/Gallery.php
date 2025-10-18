@@ -23,6 +23,6 @@ class Gallery extends Model
         if (!$this->photo) {
             return null;
         }
-        return asset($this->photo);
+        return Storage::disk('s3')->url($this->photo);
     }
 }

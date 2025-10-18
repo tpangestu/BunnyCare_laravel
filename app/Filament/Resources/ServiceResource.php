@@ -38,8 +38,8 @@ class ServiceResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('photo')
                     ->image()
-                    ->disk('local')
-                    ->directory('public/services-photos')
+                    ->disk('s3')
+                    ->directory('services-photos')
                     ->visibility('public')
                     ->preserveFilenames()
                     ->maxSize(2048)
@@ -69,7 +69,7 @@ class ServiceResource extends Resource
                     })
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('photo')
-                    ->disk('public') // Pastikan disk yang digunakan adalah public
+                    ->disk('s3') // Use S3 disk for displaying images
                     ->square() // Tampilkan gambar kotak
                     ->height(50),
                 Tables\Columns\TextColumn::make('name')

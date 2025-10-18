@@ -27,7 +27,6 @@ class Service extends Model
             return null;
         }
 
-        $disk = config('filesystems.default');
-        return url(Storage::disk($disk)->url($this->photo[0] ?? ''));
+        return Storage::disk('s3')->url($this->photo[0] ?? '');
     }
 }

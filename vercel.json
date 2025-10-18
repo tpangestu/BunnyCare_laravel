@@ -3,10 +3,13 @@
     "framework": null,
     "buildCommand": "npm install && npm run build",
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.7.4" }
+        "api/index.php": { 
+            "runtime": "vercel-php@0.7.4",
+            "memory": 3008,
+            "maxDuration": 30
+        }
     },
     "routes": [
-        { "src": "/storage/(.*)", "dest": "/tmp/public/storage/$1" },
         { "src": "/assets/(.*)", "dest": "/public/assets/$1" },
         { "src": "/(css|js|build)/(.*)", "dest": "/public/$1/$2" },
         { "src": "/(.*)", "dest": "/api/index.php" }
@@ -15,7 +18,7 @@
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "true",
+        "APP_DEBUG": "false",
         "APP_URL": "https://${VERCEL_URL}",
         "APP_KEY": "base64:VKyRxogL3l7fY0QWmt+RTa0odySXAMYNMzw9UnRS+kU=",
 
@@ -41,18 +44,11 @@
         "SESSION_DOMAIN": "",
 
         "FILESYSTEM_DISK": "cloudinary",
-        "FILESYSTEM_DRIVER": "cloudinary",
+        "CLOUDINARY_CLOUD_NAME": "dj7f6njaq",
+        "CLOUDINARY_API_KEY": "192987549115814",
+        "CLOUDINARY_API_SECRET": "MJBjh_H0YlffdOb9wtNon2W_5DY",
+        "CLOUDINARY_URL": "cloudinary://192987549115814:MJBjh_H0YlffdOb9wtNon2W_5DY@dj7f6njaq",
 
-        "APP_STORAGE": "/tmp/storage",
-        "STORAGE_PATH": "/tmp/storage",
-        "PUBLIC_PATH": "/tmp/public",
-        "CACHE_PATH": "/tmp/storage/framework/cache",
-        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
-        
-        "APP_SERVICES_CACHE": "/tmp/storage/framework/cache/services.php",
-        "APP_PACKAGES_CACHE": "/tmp/storage/framework/cache/packages.php",
-        "APP_CONFIG_CACHE": "/tmp/storage/framework/cache/config.php",
-        "APP_ROUTES_CACHE": "/tmp/storage/framework/cache/routes.php",
-        "APP_EVENTS_CACHE": "/tmp/storage/framework/cache/events.php"
+        "VIEW_COMPILED_PATH": "/tmp/views"
     }
 }

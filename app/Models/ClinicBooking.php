@@ -15,6 +15,7 @@ class ClinicBooking extends Model
         'phone_number',
         'booking_date',
         'proof_of_payment',
+        'proof_public_id',
         'status',
     ];
 

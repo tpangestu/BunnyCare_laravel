@@ -17,6 +17,7 @@ class HotelBooking extends Model
         'end_date',
         'total_price', // Ini juga perlu di-fillable
         'proof_of_payment',
+        'proof_public_id',
         'status',
     ];
 

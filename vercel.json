@@ -40,8 +40,8 @@
         "SANCTUM_STATEFUL_DOMAINS": "${VERCEL_URL}",
         "SESSION_DOMAIN": "",
 
-        "FILESYSTEM_DISK": "local",
-        "FILESYSTEM_DRIVER": "local",
+        "FILESYSTEM_DISK": "cloudinary",
+        "FILESYSTEM_DRIVER": "cloudinary",
 
         "APP_STORAGE": "/tmp/storage",
         "STORAGE_PATH": "/tmp/storage",

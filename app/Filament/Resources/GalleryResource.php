@@ -27,8 +27,8 @@ class GalleryResource extends Resource
                 Forms\Components\FileUpload::make('photo')
                     ->image()
                     ->required()
-                    ->disk('public')
-                    ->directory('gallery-photos') // Update path for public storage
+                    ->disk('cloudinary')
+                    ->directory('gallery-photos')
                     ->visibility('public')
                     ->storeFileNamesIn('photo_path'),
                 Forms\Components\TextInput::make('caption')

@@ -25,12 +25,6 @@ class Gallery extends Model
             return null;
         }
 
-        // Try S3 first, fallback to local if S3 fails
-        try {
-            return Storage::disk('s3')->url($this->photo);
-        } catch (\Exception $e) {
-            // Fallback to local storage
-            return asset('storage/' . $this->photo);
-        }
+        return $this->photo;
     }
 }

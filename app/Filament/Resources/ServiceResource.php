@@ -38,8 +38,8 @@ class ServiceResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('photo')
                     ->image()
-                    ->disk('local')
-                    ->directory('/tmp/public/storage/services-photos')
+                    ->disk('cloudinary')
+                    ->directory('services-photos')
                     ->visibility('public')
                     ->maxSize(2048)
                     ->columnSpanFull(),

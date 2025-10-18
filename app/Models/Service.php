@@ -19,7 +19,7 @@ class Service extends Model
     ];
 
     protected $casts = [
-        'photo' => 'array'
+        'photo' => 'string'
     ];
 
     public function getPhotoUrlAttribute()
@@ -28,7 +28,6 @@ class Service extends Model
             return null;
         }
 
-        $photoPath = is_array($this->photo) ? ($this->photo[0] ?? '') : $this->photo;
-        return env('APP_URL') . '/storage/services-photos/' . $photoPath;
+        return $this->photo;
     }
 }

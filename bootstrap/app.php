@@ -7,6 +7,7 @@ $tmpDirs = [
     '/tmp/cache/data',
     '/tmp/views',
     '/tmp/sessions',
+    '/tmp/storage',
 ];
 
 foreach ($tmpDirs as $dir) {
@@ -18,6 +19,8 @@ foreach ($tmpDirs as $dir) {
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
+
+$app->useStoragePath('/tmp/storage');
 
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,

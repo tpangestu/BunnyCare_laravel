@@ -19,7 +19,7 @@ class Service extends Model
     ];
 
     protected $casts = [
-        // 'photo' => 'array' // Commented out since Filament stores as string
+        'photo' => 'array'
     ];
 
     public function getPhotoUrlAttribute()
@@ -28,7 +28,12 @@ class Service extends Model
             return null;
         }
 
-        // Use public disk for consistent URL generation
-        return Storage::disk('public')->url($this->photo);
+        // Try S3 first, fallback to local if S3 fails
+        try {
+            return Storage::disk('s3')->url($this->photo[0] ?? '');
+        } catch (\Exception $e) {
+            // Fallback to local storage
+            return asset('storage/' . ($this->photo[0] ?? ''));
+        }
     }
 }

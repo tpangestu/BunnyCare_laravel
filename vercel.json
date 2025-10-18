@@ -28,32 +28,30 @@
         "MYSQL_ATTR_SSL_CA": "false",
         "DB_STRICT": "false",
 
-        "SESSION_DRIVER": "array",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "LOG_LEVEL": "debug",
+
+        "SESSION_DRIVER": "cookie",
         "SESSION_LIFETIME": "120",
         "SESSION_SECURE_COOKIE": "false",
+        "TRUST_PROXIES": "*",
         "SESSION_SAME_SITE": "lax",
+        "SANCTUM_STATEFUL_DOMAINS": "${VERCEL_URL}",
         "SESSION_DOMAIN": "",
 
         "FILESYSTEM_DISK": "local",
         "FILESYSTEM_DRIVER": "local",
 
-        "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "LOG_LEVEL": "debug",
-
         "APP_STORAGE": "/tmp/storage",
-        "STORAGE_PATH": "/tmp/storage/app",
-        "PUBLIC_STORAGE_PATH": "/tmp/storage/app/public",
-        "FRAMEWORK_STORAGE_PATH": "/tmp/storage/framework",
+        "STORAGE_PATH": "/tmp/storage",
+        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views",
+        "CACHE_PATH": "/tmp/storage/framework/cache",
 
-        "CACHE_PATH": "/tmp/cache",
-        "VIEW_COMPILED_PATH": "/tmp/views",
-        "FRAMEWORK_CACHE_PATH": "/tmp/framework",
-
-        "APP_CONFIG_CACHE": "/tmp/cache/config.php",
-        "APP_SERVICES_CACHE": "/tmp/cache/services.php",
-        "APP_PACKAGES_CACHE": "/tmp/cache/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/cache/routes.php",
-        "APP_EVENTS_CACHE": "/tmp/cache/events.php"
+        "APP_SERVICES_CACHE": "/tmp/storage/framework/cache/services.php",
+        "APP_PACKAGES_CACHE": "/tmp/storage/framework/cache/packages.php",
+        "APP_CONFIG_CACHE": "/tmp/storage/framework/cache/config.php",
+        "APP_ROUTES_CACHE": "/tmp/storage/framework/cache/routes.php",
+        "APP_EVENTS_CACHE": "/tmp/storage/framework/cache/events.php"
     }
 }

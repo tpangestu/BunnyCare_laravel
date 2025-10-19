@@ -20,8 +20,14 @@ class BookingController extends Controller
         ]);
 
         $proofOfPaymentPath = null;
+        $proofPublicId = null;
         if ($request->hasFile('proof_of_payment')) {
-            $proofOfPaymentPath = $request->file('proof_of_payment')->store('assets/proofs', 'public');
+            $uploadedFile = $request->file('proof_of_payment');
+            $result = \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::upload($uploadedFile->getRealPath(), [
+                'folder' => 'bunny-care/proofs'
+            ]);
+            $proofOfPaymentPath = $result->getSecurePath();
+            $proofPublicId = $result->getPublicId();
         }
 
         $booking = GroomingBooking::create([
@@ -29,6 +35,7 @@ class BookingController extends Controller
             'phone_number' => $request->phone_number,
             'booking_date' => $request->booking_date,
             'proof_of_payment' => $proofOfPaymentPath,
+            'proof_public_id' => $proofPublicId,
             'status' => 'pending', // Status default saat pertama kali mengisi form
         ]);
 
@@ -45,8 +52,14 @@ class BookingController extends Controller
         ]);
 
         $proofOfPaymentPath = null;
+        $proofPublicId = null;
         if ($request->hasFile('proof_of_payment')) {
-            $proofOfPaymentPath = $request->file('proof_of_payment')->store('assets/proofs', 'public');
+            $uploadedFile = $request->file('proof_of_payment');
+            $result = \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::upload($uploadedFile->getRealPath(), [
+                'folder' => 'bunny-care/proofs'
+            ]);
+            $proofOfPaymentPath = $result->getSecurePath();
+            $proofPublicId = $result->getPublicId();
         }
 
         $booking = ClinicBooking::create([
@@ -54,6 +67,7 @@ class BookingController extends Controller
             'phone_number' => $request->phone_number,
             'booking_date' => $request->booking_date,
             'proof_of_payment' => $proofOfPaymentPath,
+            'proof_public_id' => $proofPublicId,
             'status' => 'pending',
         ]);
 
@@ -82,8 +96,14 @@ class BookingController extends Controller
         $totalPrice = $duration * $pricePerDay;
 
         $proofOfPaymentPath = null;
+        $proofPublicId = null;
         if ($request->hasFile('proof_of_payment')) {
-            $proofOfPaymentPath = $request->file('proof_of_payment')->store('assets/proofs', 'public');
+            $uploadedFile = $request->file('proof_of_payment');
+            $result = \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::upload($uploadedFile->getRealPath(), [
+                'folder' => 'bunny-care/proofs'
+            ]);
+            $proofOfPaymentPath = $result->getSecurePath();
+            $proofPublicId = $result->getPublicId();
         }
 
         $booking = HotelBooking::create([
@@ -93,6 +113,7 @@ class BookingController extends Controller
             'end_date' => $request->end_date,
             'total_price' => $totalPrice,
             'proof_of_payment' => $proofOfPaymentPath,
+            'proof_public_id' => $proofPublicId,
             'status' => 'pending',
         ]);
 

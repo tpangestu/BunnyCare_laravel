@@ -8,7 +8,7 @@ return [
     'lifetime' => env('SESSION_LIFETIME', 120),
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => env('SESSION_FILES_PATH', '/tmp/sessions'), // Gunakan /tmp jika pakai file driver
+    'files' => env('SESSION_FILES_PATH', '/tmp/storage/framework/sessions'), // Gunakan /tmp/storage/framework/sessions jika pakai file driver
     'connection' => env('SESSION_CONNECTION'),
     'table' => 'sessions',
     'store' => env('SESSION_STORE'),

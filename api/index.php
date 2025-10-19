@@ -1,7 +1,18 @@
 <?php
 
 // Create necessary directories
-$dirs = ['/tmp', '/tmp/cache', '/tmp/views', '/tmp/cache/data'];
+$dirs = [
+    '/tmp',
+    '/tmp/cache',
+    '/tmp/views',
+    '/tmp/cache/data',
+    '/tmp/storage',
+    '/tmp/storage/framework',
+    '/tmp/storage/framework/cache',
+    '/tmp/storage/framework/sessions',
+    '/tmp/storage/framework/views',
+    '/tmp/storage/logs'
+];
 foreach ($dirs as $dir) {
     if (!is_dir($dir)) {
         mkdir($dir, 0755, true);

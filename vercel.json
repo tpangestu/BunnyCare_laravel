@@ -18,7 +18,7 @@
     "outputDirectory": "public",
     "env": {
         "APP_ENV": "production",
-        "APP_DEBUG": "false",
+        "APP_DEBUG": "true",
         "APP_URL": "https://${VERCEL_URL}",
         "APP_KEY": "base64:VKyRxogL3l7fY0QWmt+RTa0odySXAMYNMzw9UnRS+kU=",
 
@@ -49,6 +49,6 @@
         "CLOUDINARY_API_SECRET": "MJBjh_H0YlffdOb9wtNon2W_5DY",
         "CLOUDINARY_URL": "cloudinary://192987549115814:MJBjh_H0YlffdOb9wtNon2W_5DY@dj7f6njaq",
 
-        "VIEW_COMPILED_PATH": "/tmp/views"
+        "VIEW_COMPILED_PATH": "/tmp/storage/framework/views"
     }
 }

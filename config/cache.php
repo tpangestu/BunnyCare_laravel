@@ -13,7 +13,7 @@ return [
 
         'file' => [
             'driver' => 'file',
-            'path' => env('CACHE_PATH', '/tmp/cache'), // Gunakan /tmp
+            'path' => env('CACHE_PATH', '/tmp/storage/framework/cache'), // Gunakan /tmp/storage/framework/cache
         ],
 
         // ... stores lainnya

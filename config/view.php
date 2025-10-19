@@ -6,5 +6,5 @@ return [
     ],
 
     // PENTING: Gunakan /tmp untuk Vercel
-    'compiled' => env('VIEW_COMPILED_PATH', '/tmp/views'),
+    'compiled' => env('VIEW_COMPILED_PATH', '/tmp/storage/framework/views'),
 ];

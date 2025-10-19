@@ -19,7 +19,7 @@ class Service extends Model
     ];
 
     protected $casts = [
-        'photo' => 'string'
+        'photo' => 'json'
     ];
 
     public function getPhotoUrlAttribute()

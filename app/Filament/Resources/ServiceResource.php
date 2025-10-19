@@ -42,7 +42,8 @@ class ServiceResource extends Resource
                     ->directory('services-photos')
                     ->visibility('public')
                     ->maxSize(2048)
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/webp']),
                 Forms\Components\TextInput::make('price')
                     ->numeric()
                     ->prefix('Rp')
@@ -68,7 +69,7 @@ class ServiceResource extends Resource
                     })
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('photo')
-                    ->disk('public') // Use public disk for displaying images
+                    ->disk('cloudinary') // Use cloudinary disk for displaying images
                     ->square() // Tampilkan gambar kotak
                     ->height(50),
                 Tables\Columns\TextColumn::make('name')

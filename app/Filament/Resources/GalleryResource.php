@@ -41,8 +41,8 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('photo')
-                    ->disk('public')
+                Tables\Columns\ImageColumn::make('photo_url')
+                    ->label('Photo')
                     ->square()
                     ->height(80),
                 Tables\Columns\TextColumn::make('caption')

@@ -33,7 +33,10 @@ class Service extends Model
             return $this->photo;
         }
 
-        // Since all uploads go to Cloudinary, treat photo as Cloudinary public ID
-        return \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::getUrl($this->photo);
+        // Extract the public ID by removing the file extension
+        $publicId = pathinfo($this->photo, PATHINFO_FILENAME);
+
+        // Generate Cloudinary URL using the public ID
+        return \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::getUrl($publicId);
     }
 }

@@ -33,8 +33,9 @@ class Service extends Model
             return $this->photo;
         }
 
-        // Extract the public ID by removing the file extension
-        $publicId = pathinfo($this->photo, PATHINFO_FILENAME);
+        // The photo field contains the full Cloudinary public ID including directory
+        // Remove the file extension to get the clean public ID
+        $publicId = preg_replace('/\.[^.]+$/', '', $this->photo);
 
         // Generate Cloudinary URL using the public ID
         return \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::getUrl($publicId);

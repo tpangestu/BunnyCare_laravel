@@ -132,7 +132,7 @@
                         <small class="form-text text-muted">
                             Nama bank: BCA<br>
                             Nomor rekening: 123456<br>
-                            Atas nama: Yayay
+                            Atas nama: Pangestu
                         </small>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                         <small class="form-text">
                             Nama bank: BCA<br>
                             Nomor rekening: 123456<br>
-                            Atas nama: Yayay
+                            Atas nama: Pangestu
                         </small>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                         <small class="form-text text-muted">
                             Nama bank: BCA<br>
                             Nomor rekening: 123456<br>
-                            Atas nama: Yayay
+                            Atas nama: Pangestu
                         </small>
                     </div>
                 </div>

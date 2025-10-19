@@ -28,6 +28,12 @@ class Service extends Model
             return null;
         }
 
-        return $this->photo;
+        // If photo is already a full URL (from Cloudinary), return it
+        if (filter_var($this->photo, FILTER_VALIDATE_URL)) {
+            return $this->photo;
+        }
+
+        // Otherwise, assume it's a Cloudinary public ID and construct the URL
+        return \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::getUrl($this->photo);
     }
 }

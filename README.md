@@ -1,17 +1,3 @@
-#
-
-## File Uploads on Vercel
-
-Karena Vercel tidak mendukung local storage, file upload (misal foto) harus menggunakan storage eksternal seperti AWS S3. Pastikan environment variable berikut diatur di Vercel:
-
--   `AWS_ACCESS_KEY_ID`
--   `AWS_SECRET_ACCESS_KEY`
--   `AWS_DEFAULT_REGION`
--   `AWS_BUCKET`
--   `FILESYSTEM_DISK=s3`
-
-Lihat file `.env` untuk contoh pengaturan.
-
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

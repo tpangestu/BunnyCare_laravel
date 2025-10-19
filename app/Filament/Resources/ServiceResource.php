@@ -42,8 +42,7 @@ class ServiceResource extends Resource
                     ->directory('services-photos')
                     ->visibility('public')
                     ->maxSize(2048)
-                    ->columnSpanFull()
-                    ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'image/webp']),
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('price')
                     ->numeric()
                     ->prefix('Rp')

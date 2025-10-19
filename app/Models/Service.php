@@ -33,6 +33,11 @@ class Service extends Model
             return $this->photo;
         }
 
+        // For local storage paths, construct the asset URL
+        if (str_contains($this->photo, 'services-photos/')) {
+            return asset($this->photo);
+        }
+
         // Otherwise, assume it's a Cloudinary public ID and construct the URL
         return \CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::getUrl($this->photo);
     }
